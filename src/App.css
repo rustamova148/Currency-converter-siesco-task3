@@ -1,6 +1,6 @@
 .app{
     width: 100%;
-    height: 100vh;
+    min-height: 150vh;
     background-color: #f3e9fd;
     padding-top: 25px;
 }
@@ -17,10 +17,18 @@ hr{
 }
 form{
     width: max-content;
-    margin: 70px auto;
+    margin: 40px auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.custom-date{
+    margin-bottom: 12px;
+}
+.custom-date::placeholder {
+    font-size: 17px;
+    color: #919191;
+    font-weight: 500;
 }
 .exchange-rate-cont{
     display: flex;
@@ -35,19 +43,25 @@ form{
 }
 .exchange-rate-cont span:nth-child(2){
     color: #2661F9;
-    font-size: 30px;
+    font-size: 23px;
     font-weight: 600;
 }
-input, select{
-    width: 370px;
+input{
+    width: 350px;
     outline: none;
-    padding: 10px 13px;
+    padding: 11px;
     border: none;
-    border: 2px solid #d6d6d6;
-    border-radius: 7px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+input::placeholder{
+    font-size: 15.5px;
+    color: #919191;
+    font-weight: 500;
 }
 label{
-    margin-bottom: -12px;
+    display: block;
+    margin-bottom: 8px;
     color: #7e7e7e;
     font-weight: 600;
 }
