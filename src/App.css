@@ -1,0 +1,68 @@
+.app{
+    width: 100%;
+    height: 100vh;
+    background-color: #f3e9fd;
+    padding-top: 25px;
+}
+h1{
+    width: max-content;
+    margin: 0 auto;
+    color: #2661F9;
+    margin-bottom: 25px;
+}
+hr{
+    background-color: #9796CA;
+    height: 3px;
+    border: none;
+}
+form{
+    width: max-content;
+    margin: 70px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.exchange-rate-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.exchange-rate-cont span:first-child{
+    color: #616161;
+    font-size: 17px;
+    font-weight: 500;
+}
+.exchange-rate-cont span:nth-child(2){
+    color: #2661F9;
+    font-size: 30px;
+    font-weight: 600;
+}
+input, select{
+    width: 370px;
+    outline: none;
+    padding: 10px 13px;
+    border: none;
+    border: 2px solid #d6d6d6;
+    border-radius: 7px;
+}
+label{
+    margin-bottom: -12px;
+    color: #7e7e7e;
+    font-weight: 600;
+}
+button{
+    width: 170px;
+    margin: 0 auto;
+    padding: 12px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    background-color: #2661F9;
+    color: white;
+    font-size: 16.5px;
+    font-weight: 600;
+}
+.option1{
+    color: grey !important;
+}
