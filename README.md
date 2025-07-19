@@ -10,16 +10,6 @@ Bu layihə sadə bir valyuta çevirmə tətbiqidir. İstifadəçi seçilmiş val
 - **REST API** – Valyuta kodlarını və çevirmə nəticəsini backend-dən almaq üçün
 - **CSS** – Stil vermə məqsədilə
 
-## 🧩 Layihə Strukturu
-src/
-├── components/
-│ └── ConvertCurrency/ # Valyuta çevirmə komponenti
-├── services/
-│ └── currencyService.js # API ilə əlaqə funksiyaları
-├── App.jsx # Əsas tətbiq komponenti
-├── App.css # Ümumi stil faylı
-└── main.jsx # React giriş nöqtəsi
-
 ## 📦 Quraşdırma və İşə Salma
 
 1. Bu repozitoriyanı klonlayın:
