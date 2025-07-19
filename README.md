@@ -1,70 +1,59 @@
-# React + TypeScript + Vite
+# 💱 Currency Converter 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu layihə sadə bir valyuta çevirmə tətbiqidir. İstifadəçi seçilmiş valyutalar arasında məbləği çevirmək üçün interfeys vasitəsilə istədiyi dəyərləri daxil edə bilər.
 
-Currently, two official plugins are available:
+## 🔧 İstifadə Edilən Texnologiyalar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** – Komponent əsaslı UI yaradılması üçün
+- **JavaScript (ES6+)**
+- **Axios** – API istəkləri üçün
+- **REST API** – Valyuta kodlarını və çevirmə nəticəsini backend-dən almaq üçün
+- **CSS** – Stil vermə məqsədilə
 
-## Expanding the ESLint configuration
+## 🧩 Layihə Strukturu
+src/
+├── components/
+│ └── ConvertCurrency/ # Valyuta çevirmə komponenti
+├── services/
+│ └── currencyService.js # API ilə əlaqə funksiyaları
+├── App.jsx # Əsas tətbiq komponenti
+├── App.css # Ümumi stil faylı
+└── main.jsx # React giriş nöqtəsi
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Quraşdırma və İşə Salma
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Bu repozitoriyanı klonlayın:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+```bash
+git clone https://github.com/rustamova148/Currency-converter-siesco-task3.git
+cd Currency-converter-siesco-task3
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Lazımi paketləri quraşdırın:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+```bash
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Layihəni lokal serverdə işə salın:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# Currency-converter-siesco-task3
+```bash
+npm run dev
+
+4. Tətbiq açılacaq: http://localhost:7083
+
+🚀 Funksionallıqlar
+
+API-dən dəstəklənən valyuta kodlarının alınması
+
+from və to valyutalarının seçilməsi
+
+İstifadəçi tərəfindən məbləğin daxil edilməsi
+
+Çevrilmiş məbləğin göstərilməsi
+
+🛠 Backend API-lar
+
+Bu frontend tətbiq backend tərəfindən təqdim olunan aşağıdakı endpoint-lərlə işləyir:
+
+POST /api/Currency/Supported – Dəstəklənən valyutaların siyahısını gətirir
+
+POST /api/Currency/Convert – Valyuta çevirmə funksionallığını təmin edir
