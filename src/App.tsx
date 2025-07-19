@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { getSupportedCurrency } from "./services/authService";
-import {convertCurrency} from "./services/authService";
+import { getSupportedCurrency } from "./services/currencyService";
+import {convertCurrency} from "./services/currencyService";
 import ConvertCurrency from "./components/ConvertCurrency";
 
 function App() {
