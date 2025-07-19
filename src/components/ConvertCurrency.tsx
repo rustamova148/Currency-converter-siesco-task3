@@ -10,20 +10,6 @@ const ConvertCurrency = ({
 }: ConvertCurrencyProps) => {
   return (
     <form onSubmit={handleConvert}>
-      <div>
-        <label htmlFor="date">Date</label>
-        <input
-          type="date"
-          id="date"
-          value={formData.date}
-          onChange={(e) =>
-            setFormData((prev) => ({
-              ...prev,
-              date: e.target.value,
-            }))
-          }
-        />
-      </div>
       <input
         type="text"
         placeholder="Amount"

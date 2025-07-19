@@ -2,14 +2,12 @@ export interface ConvertParams {
     from: string;
     to: string;
     amount: number;
-    date: string;
 }
 
 export interface FormDataType {
     from: string;
     to: string;
     amount: string;
-    date: string;
 }
 
 export interface OptionType {

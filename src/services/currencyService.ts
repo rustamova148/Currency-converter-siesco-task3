@@ -6,9 +6,9 @@ export const getSupportedCurrency = async () => {
     return response.data;
 }
 
-export const convertCurrency = async ({ from, to, amount, date }: ConvertParams) => {
+export const convertCurrency = async ({ from, to, amount }: ConvertParams) => {
     const response = await api.get("/api/Currency/Convert", {
-        params: { from, to, amount, date }
+        params: { from, to, amount }
     });
     return response.data;
 }

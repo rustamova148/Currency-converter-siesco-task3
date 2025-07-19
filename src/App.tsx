@@ -11,16 +11,7 @@ function App() {
     from: "",
     to: "",
     amount: "",
-    date: "",
   });
-  
-  const localeDateString = formData.date;
-  if (localeDateString) {
-    const utcDate = new Date(localeDateString + "T00:00:00Z");
-    console.log(utcDate.toISOString());
-  } else {
-    console.log("Date is empty");
-  }
 
   const fetchSupportedcurrency = async () => {
     try {
@@ -42,7 +33,6 @@ function App() {
         from: formData.from,
         to: formData.to,
         amount: Number(formData.amount),
-        date: formData.date,
       });
       console.log(data.convertedAmount);
       setResultText(`${formData.amount} ${formData.from} = ${data.convertedAmount} ${formData.to}`);
