@@ -1,8 +1,8 @@
 import "./App.css";
-import Select from "react-select";
 import { useState, useEffect } from "react";
 import { getSupportedCurrency } from "./services/authService";
 import {convertCurrency} from "./services/authService";
+import ConvertCurrency from "./components/ConvertCurrency";
 
 function App() {
   const [currencyCodes, setCurrencyCodes] = useState([]);
@@ -44,7 +44,7 @@ function App() {
         amount: Number(formData.amount),
         date: formData.date,
       });
-      console.log(data);
+      console.log(data.convertedAmount);
       setResultText(`${formData.amount} ${formData.from} = ${data.convertedAmount} ${formData.to}`);
     } catch (error) {
       console.log("Xeta", error);
@@ -58,114 +58,18 @@ function App() {
 
   return (
     <div className="app">
+      <div className="overlay"></div>
+      <div className="content">
       <h1>Currency Converter</h1>
       <hr />
-      <form onSubmit={handleConvert}>
-        <div>
-          <label htmlFor="date">Date</label>
-          <input
-            type="date"
-            id="date"
-            value={formData.date}
-            onChange={(e) =>
-              setFormData((prev) => ({
-                ...prev,
-                date: e.target.value,
-              }))
-            }
-          />
-        </div>
-        <input
-          type="text"
-          placeholder="Amount"
-          value={formData.amount}
-          onChange={(e) =>
-            setFormData((prev) => ({
-              ...prev,
-              amount: e.target.value,
-            }))
-          }
-        />
-        <div>
-          <label htmlFor="from">From</label>
-          <Select
-            id="from"
-            value={
-              options.find((option) => option.value === formData.from) || null
-            }
-            options={options}
-            onChange={(selectedOption) =>
-              setFormData((prev) => ({
-                ...prev,
-                from: selectedOption ? selectedOption.value : "",
-              }))
-            }
-            placeholder="Country"
-            styles={{
-              control: (provided, state) => ({
-                ...provided,
-                boxShadow: "none",
-                borderColor: state.isFocused
-                  ? "#d6d6d6;"
-                  : provided.borderColor,
-                "&:hover": {
-                  borderColor: "#d6d6d6",
-                },
-              }),
-              dropdownIndicator: (provided) => ({
-                ...provided,
-                color: "#2661F9",
-                "&:hover": {
-                  color: "#2661F9",
-                },
-              }),
-            }}
-          />
-        </div>
-        <div>
-          <label htmlFor="to">To</label>
-          <Select
-            id="to"
-            value={
-              options.find((option) => option.value === formData.to) || null
-            }
-            options={options}
-            onChange={(selectedOption) =>
-              setFormData((prev) => ({
-                ...prev,
-                to: selectedOption ? selectedOption.value : "",
-              }))
-            }
-            placeholder="Country"
-            styles={{
-              control: (provided, state) => ({
-                ...provided,
-                boxShadow: "none",
-                borderColor: state.isFocused
-                  ? "#d6d6d6;"
-                  : provided.borderColor,
-                "&:hover": {
-                  borderColor: " #d6d6d6",
-                },
-              }),
-              dropdownIndicator: (provided) => ({
-                ...provided,
-                color: "#2661F9",
-                "&:hover": {
-                  color: "#2661F9",
-                },
-              }),
-            }}
-          />
-        </div>
-        <div className="exchange-rate-cont">
-          <span>Exchange Rate</span>
-          <span>
-            {resultText}
-          </span>
-        </div>
-        <button>Convert</button>
-      </form>
+      <ConvertCurrency 
+      resultText={resultText}
+      formData={formData}
+      setFormData={setFormData}
+      handleConvert={handleConvert}
+      options={options}
+      />
+      </div>
     </div>
   );
 }

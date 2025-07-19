@@ -1,5 +1,5 @@
 import api from "./api"
-import type { ConvertParams } from "../types/parameterTypes"
+import type { ConvertParams } from "../types/types"
 
 export const getSupportedCurrency = async () => {
     const response = await api.get("/api/Currency/Supported");

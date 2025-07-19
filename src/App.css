@@ -1,32 +1,50 @@
 .app{
     width: 100%;
-    min-height: 150vh;
-    background-color: #f3e9fd;
-    padding-top: 25px;
+    min-height: 145vh;
+    background-image: url("./assets/background.jpeg");
+    background-size: cover;
+    background-position: center; 
+    padding-top: 1.6rem;
+    position: relative;
+}
+.overlay{
+    width: 100%;
+    min-height: 145vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
 }
 h1{
     width: max-content;
     margin: 0 auto;
-    color: #2661F9;
-    margin-bottom: 25px;
+    color: #e98008;
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 1.6rem;
+    z-index: 2;
 }
 hr{
-    background-color: #9796CA;
-    height: 3px;
+    background-color: #bcbae9;
+    height: 0.2rem;
     border: none;
 }
 form{
     width: max-content;
-    margin: 40px auto;
+    margin: 2.5rem auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
 }
 .custom-date{
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
 }
 .custom-date::placeholder {
-    font-size: 17px;
+    font-size: 1.06rem;
     color: #919191;
     font-weight: 500;
 }
@@ -34,47 +52,47 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 0.6rem;
 }
 .exchange-rate-cont span:first-child{
-    color: #616161;
-    font-size: 17px;
+    color:  #e98008;
+    font-size: 1rem;
     font-weight: 500;
 }
 .exchange-rate-cont span:nth-child(2){
-    color: #2661F9;
-    font-size: 23px;
+    color:  #e98008;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 input{
-    width: 350px;
+    width: 21.9rem;
     outline: none;
-    padding: 11px;
+    padding: 0.7rem;
     border: none;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
+    border: 0.06rem solid #CCCCCC;
+    border-radius: 0.25rem;
 }
 input::placeholder{
-    font-size: 15.5px;
+    font-size: 0.97rem;
     color: #919191;
     font-weight: 500;
 }
 label{
     display: block;
-    margin-bottom: 8px;
-    color: #7e7e7e;
+    margin-bottom: 0.5rem;
+    color: #e98008;
     font-weight: 600;
 }
 button{
-    width: 170px;
+    width: 10.6rem;
     margin: 0 auto;
-    padding: 12px 0;
+    padding: 0.75rem 0;
     cursor: pointer;
     border: none;
-    border-radius: 7px;
-    background-color: #2661F9;
+    border-radius: 0.44rem;
+    background-color: #e98008;
     color: white;
-    font-size: 16.5px;
+    font-size: 1.03rem;
     font-weight: 600;
 }
 .option1{
