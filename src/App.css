@@ -1,100 +1,137 @@
-.app{
-    width: 100%;
-    min-height: 145vh;
-    background-image: url("./assets/background.jpeg");
-    background-size: cover;
-    background-position: center; 
-    padding-top: 1.6rem;
-    position: relative;
+.app {
+  width: 100%;
+  min-height: 145vh;
+  background-image: url("./assets/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 1rem;
+  position: relative;
 }
-.overlay{
-    width: 100%;
-    min-height: 145vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.overlay {
+  width: 100%;
+  min-height: 145vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .content {
   position: relative;
   z-index: 2;
 }
-h1{
-    width: max-content;
-    margin: 0 auto;
-    color: #e98008;
-    padding: 0.3rem 0.6rem;
-    margin-bottom: 1.6rem;
-    z-index: 2;
+h1 {
+  width: max-content;
+  margin: 0 auto;
+  color: #e98008;
+  margin-bottom: 1rem;
+  z-index: 2;
 }
-hr{
-    background-color: #bcbae9;
-    height: 0.2rem;
-    border: none;
+hr {
+  background-color: #bcbae9;
+  height: 0.2rem;
+  border: none;
 }
-form{
-    width: max-content;
-    margin: 4.5rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+form {
+  width: 40%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding: 2.5rem 1.75rem;
+  border-radius: 0.6rem;
+  background-color: rgba(14, 34, 88, 0.7);
+  margin-top: 3.75rem;
+  border: 0.06rem solid #e98008;
 }
-.custom-date{
-    margin-bottom: 0.75rem;
+.custom-date {
+  margin-bottom: 0.75rem;
 }
 .custom-date::placeholder {
-    font-size: 1.06rem;
-    color: #919191;
-    font-weight: 500;
+  font-size: 1.06rem;
+  color: #919191;
+  font-weight: 500;
 }
-.exchange-rate-cont{
+.exchange-rate-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.exchange-rate-cont span:first-child {
+  color: #e98008;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.exchange-rate-cont span:nth-child(2) {
+  color: #e98008;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  outline: none;
+  padding: 0.7rem;
+  border: none;
+  border: 0.06rem solid #cccccc;
+  border-radius: 0.25rem;
+}
+input::placeholder {
+  font-size: 0.97rem;
+  color: #919191;
+  font-weight: 500;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #e98008;
+  font-weight: 600;
+}
+button {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.44rem;
+  background-color: #ca701c;
+  color: white;
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+button:hover{
+  background-color: #e98008;
+  transition: 0.3s;
+}
+.option1 {
+  color: grey !important;
+}
+.from-to-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.from-to-container div{
+    width: 100%;
+}
+.change-btn {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+@media (max-width: 1279px) {
+  .from-to-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
+  }
 }
-.exchange-rate-cont span:first-child{
-    color:  #e98008;
-    font-size: 1rem;
-    font-weight: 500;
-}
-.exchange-rate-cont span:nth-child(2){
-    color:  #e98008;
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-input{
-    width: 21.9rem;
-    outline: none;
-    padding: 0.7rem;
-    border: none;
-    border: 0.06rem solid #CCCCCC;
-    border-radius: 0.25rem;
-}
-input::placeholder{
-    font-size: 0.97rem;
-    color: #919191;
-    font-weight: 500;
-}
-label{
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #e98008;
-    font-weight: 600;
-}
-button{
-    width: 10.6rem;
-    margin: 0 auto;
-    padding: 0.75rem 0;
-    cursor: pointer;
-    border: none;
-    border-radius: 0.44rem;
-    background-color: #e98008;
-    color: white;
-    font-size: 1.03rem;
-    font-weight: 600;
-}
-.option1{
-    color: grey !important;
+
+@media (max-width: 769px){
+    form {
+       width: 80%;
+    }
+    .from-to-container{
+        gap: 0.6rem;
+    }
 }

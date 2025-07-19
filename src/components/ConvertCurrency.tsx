@@ -1,17 +1,20 @@
 import Select from "react-select";
 import type { ConvertCurrencyProps } from "../types/types";
+import { ClipLoader } from "react-spinners";
 
 const ConvertCurrency = ({
     resultText,
     formData,
     setFormData,
     handleConvert,
-    options
+    options,
+    loading
 }: ConvertCurrencyProps) => {
   return (
     <form onSubmit={handleConvert}>
       <input
         type="text"
+        name="amount"
         placeholder="Amount"
         value={formData.amount}
         onChange={(e) =>
@@ -21,6 +24,7 @@ const ConvertCurrency = ({
           }))
         }
       />
+      <div className="from-to-container">
       <div>
         <label htmlFor="from">From</label>
         <Select
@@ -55,6 +59,7 @@ const ConvertCurrency = ({
           }}
         />
       </div>
+      <i className="fa-solid fa-right-left change-btn"></i>
       <div>
         <label htmlFor="to">To</label>
         <Select
@@ -87,11 +92,14 @@ const ConvertCurrency = ({
           }}
         />
       </div>
+      </div>
       <div className="exchange-rate-cont">
         <span>Exchange Rate</span>
-        <span>{resultText}</span>
+        {loading ? <ClipLoader size={20} color="#ffffff" /> : <span>{resultText}</span>}
       </div>
-      <button>Convert</button>
+      <button>
+      {loading ? <ClipLoader size={20} color="#ffffff" /> : "Convert"}
+      </button>
     </form>
   );
 };

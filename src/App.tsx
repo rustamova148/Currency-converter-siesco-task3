@@ -12,6 +12,7 @@ function App() {
     to: "",
     amount: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const fetchSupportedcurrency = async () => {
     try {
@@ -28,16 +29,18 @@ function App() {
 
   const handleConvert = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
+  setLoading(true);
     try {
       const data = await convertCurrency({
         from: formData.from,
         to: formData.to,
         amount: Number(formData.amount),
       });
-      console.log(data.convertedAmount);
       setResultText(`${formData.amount} ${formData.from} = ${data.convertedAmount} ${formData.to}`);
     } catch (error) {
       console.log("Xeta", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -58,6 +61,7 @@ function App() {
       setFormData={setFormData}
       handleConvert={handleConvert}
       options={options}
+      loading={loading}
       />
       </div>
     </div>

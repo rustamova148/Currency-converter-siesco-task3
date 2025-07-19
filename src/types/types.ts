@@ -21,4 +21,5 @@ export interface ConvertCurrencyProps {
     setFormData: React.Dispatch<React.SetStateAction<FormDataType>>;
     handleConvert: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
     options: OptionType[];
+    loading: boolean;
 }
