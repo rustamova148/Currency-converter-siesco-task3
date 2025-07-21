@@ -107,12 +107,14 @@ button:hover{
   color: grey !important;
 }
 .from-to-container {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.from-to-container div{
-    width: 100%;
+.from-to-cont-inside{
+  width: 50%;
 }
 .change-btn {
   color: #ffffff;
@@ -124,14 +126,18 @@ button:hover{
   .from-to-container {
     display: flex;
     flex-direction: column;
+    gap: 0;
+  }
+  .change-btn{
+    transform: rotate(90deg);
+  }
+  .from-to-cont-inside{
+    width: 100%;
   }
 }
 
 @media (max-width: 769px){
     form {
        width: 80%;
-    }
-    .from-to-container{
-        gap: 0.6rem;
     }
 }

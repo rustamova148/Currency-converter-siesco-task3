@@ -25,7 +25,7 @@ const ConvertCurrency = ({
         }
       />
       <div className="from-to-container">
-      <div>
+      <div className="from-to-cont-inside">
         <label htmlFor="from">From</label>
         <Select
           id="from"
@@ -60,7 +60,7 @@ const ConvertCurrency = ({
         />
       </div>
       <i className="fa-solid fa-right-left change-btn"></i>
-      <div>
+      <div className="from-to-cont-inside">
         <label htmlFor="to">To</label>
         <Select
           id="to"
